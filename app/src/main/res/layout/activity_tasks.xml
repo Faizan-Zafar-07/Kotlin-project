@@ -5,17 +5,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity_tasks"
+    tools:context=".uii.Activity_tasks"
     android:orientation="vertical"
     android:fitsSystemWindows="true"
+    android:background="@drawable/gradient_color"
     android:gravity="bottom"
-    android:layout_marginBottom="15dp">
+    >
 
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_marginHorizontal="10dp"
         app:cardCornerRadius="15dp"
         >
         <LinearLayout
@@ -96,8 +97,9 @@
         android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_margin="10dp"
-        app:cardCornerRadius="15dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="15dp"
+        app:cardCornerRadius="20dp"
         >
         <Button
             android:id="@+id/btn_add_task"

@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Kotlin project</string>
+    <string name="fb"><b>Facebook</b></string>
+    <string name="SU"><b>Sign Up</b></string>
+    <string name="FP"><b>Forget Password</b></string>
     <string name="navigation_drawer_close">nav_close</string>
     <string name="navigation_drawer_open">nav_open</string>
 </resources>

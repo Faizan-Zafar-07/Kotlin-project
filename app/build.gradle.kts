@@ -9,7 +9,7 @@ plugins {
 
 android {
     namespace = "com.example.kotlinproject"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.kotlinproject"
@@ -47,12 +47,6 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("com.google.firebase:firebase-storage-ktx:20.2.1")
     implementation ("com.google.firebase:firebase-firestore-ktx:23.0.3")
-    implementation("com.google.firebase:firebase-auth-ktx:21.0.1")
     implementation ("androidx.recyclerview:recyclerview:1.2.1")
-    implementation("com.google.android.gms:play-services-mlkit-text-recognition-common:19.0.0")
-    implementation(project(mapOf("path" to ":app")))
-    implementation(project(mapOf("path" to ":app")))
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    implementation("com.airbnb.android:lottie:3.4.0")
 }

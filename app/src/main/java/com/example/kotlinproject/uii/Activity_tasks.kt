@@ -1,4 +1,4 @@
-package com.example.kotlinproject
+package com.example.kotlinproject.uii
 
 import android.annotation.SuppressLint
 import android.app.DatePickerDialog
@@ -13,6 +13,7 @@ import android.widget.DatePicker
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import com.example.kotlinproject.R
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.firebase.firestore.DocumentReference
@@ -21,7 +22,6 @@ import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
 import kotlin.Exception
-import kotlin.properties.Delegates
 
 class Activity_tasks : AppCompatActivity() {
 
@@ -36,7 +36,7 @@ class Activity_tasks : AppCompatActivity() {
     lateinit var calendar: Calendar
     lateinit var firestore: FirebaseFirestore
 
-    var Datee : Long = 0
+    var Datee : String = "0"
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -150,7 +150,32 @@ class Activity_tasks : AppCompatActivity() {
         val sdf = SimpleDateFormat("EEEE, MMM dd, yyyy")
         val formattedDueDate = sdf.format(dueDate)
 
-        Datee = daysRemaining
+        if(daysRemaining<7){
+
+            var days_remain = daysRemaining
+            Datee = "$daysRemaining days"
+
+        }
+        else if (daysRemaining<30){
+            var days_remain = daysRemaining/7
+            if (days_remain>1) {
+                Datee = "$days_remain weeks"
+            }
+            else {
+                Datee = "$days_remain week"
+            }
+        }
+
+        else if (daysRemaining.toInt() == 30){
+            var days_remain = daysRemaining
+            Datee = "1 month"
+        }
+
+        else if (daysRemaining > 30){
+            var days_remain = daysRemaining/30
+            Datee = "$days_remain months"
+        }
+
         visible_date.text = "Due Date: $formattedDueDate"
     }
 
